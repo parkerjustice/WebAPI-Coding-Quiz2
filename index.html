@@ -6,16 +6,59 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Quiz</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/style.css">
 </head>
 
 
-<body>
+<body class="bg-yellow-100">
 
     <header>
-    
+        <h3 class="text-left font-mono text-2xl" id="high-scores"> High Scores</h3>
+        <h3 class="text-right font-mono text-2xl countdown"> Countdown <span id="countdown"></span></h3>
     </header>
     
+
+    <div id="initial-screen" class="start">
+        <div class="initial-start text-center font-mono bg-blue-200">
+            <h1> Coding Quiz </h1>
+            <p> 
+                Answer the following questions within the time limit!
+            </p>
+            <button class="start btn bg-yellow-300" id="startquiz">Begin!</button>
+        </div>
+    </div>
+
+    <div id="question-sect" class="box">
+    <div id="scores" class="bg-yellow-200 font-mono text-center">
+        <h1>End</h1>
+    </div>
+
+    <form id="enter-initials" class="initials">
+        <p>Enter Initials
+            <input id="initials" class="text" type="text" name="initials" />
+            <button class="btn start text-2xl" id="submit" type="submit">Submit Here</button>
+        </p>
+    </form>
+    </div>
+
+    <div id="high-score" class="box">
+        <div class="high-score-sect">
+            <h2 class="high-scores"> High Scores</h2>
+            
+            <div>
+                <button class="btn" id="goback"> Back</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="box" id="correct">
+        <h1> Correct </h1>
+    </div>
+    <div class="box" id="incorrect">
+        <h2>Incorrect</h2>
+    </div>
+
 <script src="./assets/script.js"></script>
 </body>
 
