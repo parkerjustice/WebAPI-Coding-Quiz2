@@ -10,31 +10,44 @@
     <link rel="stylesheet" href="./assets/style.css">
 </head>
 
-
+<!-- Main Content -->
 <body class="bg-yellow-100">
-
+<!-- Header Content -->
     <header>
         <h3 class="text-left font-mono text-2xl" id="high-scores"> High Scores</h3>
         <h3 class="text-right font-mono text-2xl countdown"> Countdown <span id="countdown"></span></h3>
     </header>
     
-
+<!-- Starting Screen -->
     <div id="initial-screen" class="start">
         <div class="initial-start text-center font-mono bg-blue-200">
             <h1> Coding Quiz </h1>
             <p> 
                 Answer the following questions within the time limit!
             </p>
+            <!--Button to Start Quiz-->
             <button class="start btn bg-yellow-300" id="startquiz">Begin!</button>
         </div>
     </div>
+<!-- Added Questions -->
+<div id="question-area" class="end">
+<div class="area questions">
+    <div id="questions"></div>
+    <div id="answersbtn" class="buttons"></div>
+</div>
+</div>
 
-    <div id="question-sect" class="box">
+
+<!--End Screen -->
+
+    <div id="ending-sect" class="end">
     <div id="scores" class="bg-yellow-200 font-mono text-center">
-        <div id="end">
+        <div id="ending">
         <h1>End</h1>
     </div>
     </div>
+
+    <!--Saving Section-->
 
     <form id="enter-initials" class="initials">
         <p>Enter Initials
@@ -44,21 +57,26 @@
     </form>
     </div>
 
-    <div id="high-score" class="box">
+    <!-- High Scores-->
+
+    <div id="high-score" class="end">
         <div class="high-score-sect">
             <h2 class="high-scores"> High Scores</h2>
             
+            <!--Button -->
             <div>
                 <button class="btn" id="goback"> Back</button>
             </div>
         </div>
     </div>
 
+
+    <!-- Right or wrong sect-->
     <div id="question-area">
-    <div class="box" id="correct">
+    <div class="end" id="correct">
         <h1> Correct </h1>
     </div>
-    <div class="box" id="incorrect">
+    <div class="end" id="incorrect">
         <h2>Incorrect</h2>
     </div>
 </div>

@@ -1,10 +1,4 @@
-let initialScreenEl = document.getElementById("initial-screen");
-let questionsEl = document.getElementById("question-sect");
-let scoresEl = document.getElementById("scores");
-let highScoreEl = document.getElementById("high-score");
-let questionAreaEl = document.getElementById("question-area");
-
-
+let questionsAreaEl = document.getElementById("")
 
 
 
@@ -16,13 +10,3 @@ let questionArea = [
     }
 ]
 
-
-
-let beginQuiz = function () {
-    highScoreEl.classList.add("off")
-}
-
-
-
-
-btnBeginQuizEl.addEventListener("click",beginQuiz)
