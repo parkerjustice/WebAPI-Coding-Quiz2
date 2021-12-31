@@ -21,7 +21,7 @@ var endgame;
 timeEl.innerText = 0;
 
 var beginquizEl = document.querySelector("#beginquiz");
-var goEl = document.querySelector("#goback")
+var gobackEl = document.querySelector("#goback")
 var startFresh = document.querySelector("#start-fresh")
 
 var randomQ
@@ -156,9 +156,138 @@ var checkAnswer = function(event) {
             setQuestion()
         } else {
             endgame = "true";
-            viewPoints();
+            showings();
         }
 }
 
-startBtnEl.addEventListener("click", beginning)
-backBtnEl.addEventListener("click", beginSect)
+// SHOW POINTS AT END OF GAME //
+var showings = function() {
+    initialQuestionEl.classList.add("no");
+    finalSectEl.classList.remove("no");
+    finalSectEl.classList.add("yes");
+
+    var viewer = document.createElement("p");
+    viewer.innerText = ("Your final score is " + points + "!");
+    highScoreSectEl.appendChild(viewer);
+}       
+
+// HIGH SCORE FUNCTION //
+var savedScore = function(event) { 
+    event.preventDefault() 
+    var name = document.querySelector("#name").value;
+    if (!name) {
+        alert("Please enter your name!");
+        return;
+    }
+
+    nameForm.reset();
+
+    var record = {
+        name: name,
+        points: points,
+      } 
+  
+      records.push(record);
+      records.sort((a, b) => {return b.points-a.points});
+  
+      while (lsHighScoreEl.firstChild) {
+         lsHighScoreEl.removeChild(lsHighScoreEl.firstChild)
+      }
+      
+      for (var i = 0; i < records.length; i++) {
+        var recordsEl = document.createElement("li");
+        recordsEl.className = "high-score";
+        recordsEl.innerHTML = records[i].name + " - " + records[i].points;
+        lsHighScoreEl.appendChild(recordsEl);
+      }
+  
+      saveRecords();
+      displayRecords();
+  
+  }
+
+  // SAVE RECORDS //
+var saveRecords = function () {
+    localStorage.setItem("records", JSON.stringify(records))
+            
+}
+
+// LOAD RECORDS ONTO SCREEN //
+var loadRecords = function () {
+    var loadedRecords = localStorage.getItem("records")
+        if (!loadedRecords) {
+        return false;
+    }
+
+    records = JSON.parse(loadedRecords);
+    records.sort((a, b) => {return b.points-a.points})
+ 
+
+    for (var i = 0; i < loadedRecords.length; i++) {
+        var recordsEl = document.createElement("li");
+        recordsEl.className = "high-score";
+        recordsEl.innerText = loadedRecords[i].name + " - " + loadedRecords[i].points;
+        sectEl.appendChild(recordsEl);
+
+        records.push(loadedRecords[i]);
+    }
+}  
+
+// DISPLAY RECORDS //
+var displayRecords = function() {
+
+    highScoreSectEl.classList.remove("no");
+    highScoreSectEl.classList.add("yes");
+    endgame = "true"
+
+    if (finalSectEl.className = "yes") {
+        finalSectEl.classList.remove("yes");
+        finalSectEl.classList.add("no");
+    }
+    if (initialClassEl.className = "yes") {
+        initialClassEl.classList.remove("yes");
+        initialClassEl.classList.add("no");
+    }     
+    if (boxQuestionEl.className = "yes") {
+        boxQuestionEl.classList.remove("yes");
+        boxQuestionEl.classList.add("no");
+    }
+    if (correctEl.className = "yes") {
+        correctEl.classList.remove("yes");
+        correctEl.classList.add("no");
+    }
+    if (incorrectEl.className = "yes") {
+        incorrectEl.classList.remove("yes");
+        incorrectEl.classList.add("no");
+    }
+}
+
+// CLEAR RECORDS FUNCTION //
+var recordClear = function() {
+    records = [];
+
+    while (sectEl.firstChild) {
+        sectEl.removeChild(lsectEl.firstChild);
+    }
+
+    localStorage.clear(records)
+}
+
+loadRecords() 
+
+
+        
+// START GAME BUTTON //
+initialClassEl.addEventListener("click", gameStart)
+
+// BACK BTN //
+gobackEl.addEventListener("click", startPage)
+
+// VIEW RECORDS //
+scoresEl.addEventListener("click", displayRecords)
+
+// NAME SUBMIT //
+savehere.addEventListener("submit", savedScore)
+
+// CLEAR BUTTON
+startFresh.addEventListener("click", recordClear)
