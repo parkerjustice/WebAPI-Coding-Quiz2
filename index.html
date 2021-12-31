@@ -10,17 +10,20 @@
     <link rel="stylesheet" href="./assets/style.css">
 </head>
 
-<!-- Main Content -->
-<body class="bg-yellow-100">
-<!-- Header Content -->
-    <header>
-        <h3 class="text-left font-mono text-2xl" id="high-scores"> High Scores</h3>
-        <h3 class="text-right font-mono text-2xl countdown"> Countdown <span id="countdown"></span></h3>
-    </header>
-    
+    <!-- Main -->
+
+    <body> 
+
+        <!-- Header -->
+        
+        <header class="bg-yellow-200">
+     <h3 class="text-left font-mono text-blue-600" id="high-scores"> Your Score </h3> 
+     <h3 class="time text-blue-600 text-left font-mono">Time Left: <span id="time"> </span> </h3>
+        </header>
+
 <!-- Starting Screen -->
-    <div id="initial-screen" class="start">
-        <div class="initial-start text-center font-mono bg-blue-200">
+    <div id="home-box" class="on">
+        <div class="box start text-center font-mono bg-blue-200">
             <h1> Coding Quiz </h1>
             <p> 
                 Answer the following questions within the time limit!
