@@ -46,7 +46,7 @@ var startPage = function () {
     initialClassEl.classList.add("yes")
     yourscoresEl.removeChild(boxScoreEl.lastChild)
     questionIndex = 0
-    gameover = ""
+    endgame = ""
     timeEl.textContent = 0 
     points = 0
 
@@ -94,6 +94,71 @@ var gameStart = function() {
     setQuestion();
 }
 
+// NEXT QUESTIONS //
+var setQuestion = function() {
+    reset();
+    displayQuestion(randomQuestions[questionIndex])
+}
+
+// REMOVE BUTTONS //
+var reset = function() {
+    while (exampleEl.firstChild) {
+        exampleEl.removeChild(exampleEl.firstChild)
+    };
+};
+
+// DISPLAY QUESTIONS //
+var displayQuestion = function(index) {
+    questionsEl.innerText = index.q
+    for (var i = 0; i < index.choices.length; i++) {
+        var answer = document.createElement('button')
+        answer.innerText = index.choices[i].choice
+        answer.classList.add('btn')
+        answer.classList.add('answerbtn')
+        answer.addEventListener("click", checkAnswer)
+        exampleEl.appendChild(answer)
+    }
+};
+
+// CORRECT //
+var correctAnswer = function() {
+    if (correctEl.className = "no") {
+        correctEl.classList.remove("no")
+        correctEl.classList.add("tag")
+        incorrectEl.classList.remove("tag")
+        incorrectEl.classList.add("no")
+    }
+}  
+
+// INCORRECT //
+var incorrectAnswer = function() {
+    if (incorrectEl.className = "no") {
+        incorrectEl.classList.remove("no")
+        incorrectEl.classList.add("tag")
+        correctEl.classList.remove("tag")
+        correctEl.classList.add("no")
+    }
+}
+
+// CHECK TO SEE IF ANSWER IS CORRECT OR NOT //
+var checkAnswer = function(event) {
+    var selected = event.target 
+        if (randomQ[questionIndex].a === selected.innerText) {
+            correctAnswer()
+            points = points + 8
+        } else {
+            incorrectAnswer()
+            points = points - 1;
+            timeleft = timeleft - 5;
+        };
+        questionIndex++
+        if  (randomQ.length > questionIndex + 1) {
+            setQuestion()
+        } else {
+            endgame = "true";
+            viewPoints();
+        }
+}
 
 startBtnEl.addEventListener("click", beginning)
 backBtnEl.addEventListener("click", beginSect)
