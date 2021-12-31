@@ -2,6 +2,7 @@ var initialClassEl = document.getElementById("initial-class");
 var initialQuestionEl = document.getElementById("initial-question");
 var yourscoresEl = document.getElementById("yourscores")
 var finalSectEl = document.getElementById("final-sect")
+
 var highScoreSectEl = document.getElementById("highscoresect")
 var scoresEl = document.getElementById("scores")
 var sectEl = document.getElementById("sect")
@@ -29,7 +30,7 @@ var questionIndex = 0
 var records = [];
 
 
-let questionArea = [
+let questions = [
     {
         question: "Can we override the private method in Java?",
         answer:'1 No',
@@ -37,18 +38,27 @@ let questionArea = [
     }
 ]
 
-let beginning = function() {
-    initialScreenEl.classList.add('wrong');
-    initialScreenEl.classList.remove('right');
-    questionsEl.classList.remove('wrong');
-    questionsEl.classList.add('on');
+// HOME SCREEN //
+var startPage = function () {
+    highScoreSectEl.classList.add("no")
+    highScoreSectEl.classList.remove("yes")
+    initialClassEl.classList.remove("no")
+    initialClassEl.classList.add("yes")
+    yourscoresEl.removeChild(boxScoreEl.lastChild)
+    questionIndex = 0
+    gameover = ""
+    timeEl.textContent = 0 
+    points = 0
 
-    randomQuestions = questions.sort(() => Math.random() - 1.0)
-    timeSet.textContent();
-    setQuestion();
-
+    if (correctEl.className = "yes") {
+        correctEl.classList.remove("yes");
+        correctEl.classList.add("no")
+    }
+    if (incorrectEl.className = "yes") {
+        incorrectEl.classList.remove("yes");
+        incorrectEl.classList.add("no");
+    }
 }
-
 
 let beginSect = function () {
     questionsEl.classList.add("wrong")
