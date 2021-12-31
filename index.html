@@ -10,35 +10,31 @@
     <link rel="stylesheet" href="./assets/style.css">
 </head>
 
-    <!-- Main -->
+<!-- Main -->
 
     <body> 
 
-        <!-- Header -->
+<!-- Header -->
         
         <header class="bg-yellow-200">
-     <h3 class="text-left font-mono text-blue-600" id="high-scores"> Your Score </h3> 
-     <h3 class="time text-blue-600 text-left font-mono">Time Left: <span id="time"> </span> </h3>
+     <h3 class="text-left font-mono text-blue-600" id="best"> Your Score </h3> 
+     <h3 class="timer text-blue-600 text-left font-mono">Time Left: <span id="timer"> </span> </h3>
         </header>
 
-<!-- Starting Screen -->
-    <div id="home-box" class="on">
-        <div class="box start text-center font-mono bg-blue-200">
-            <h1> Coding Quiz </h1>
-            <p> 
-                Answer the following questions within the time limit!
-            </p>
-            <!--Button to Start Quiz-->
-            <button class="start btn bg-yellow-300" id="startquiz">Begin!</button>
-        </div>
+<!-- Begin -->
+
+    <div id="initial-class" class="yes">
+    <div class="initial Begin">
+      <h1>Coding Quiz</h1> 
+
+      <p>
+Answer the following question to test your coding knowlege!
+    </p>
+
+<!-- Buttons  -->
+        <button class="startbtn" id="beginquiz">Begin the Quiz!</button>
+    </div>    
     </div>
-<!-- Added Questions -->
-<div id="question-area" class="end">
-<div class="area questions">
-    <div id="questions"></div>
-    <div id="answersbtn" class="buttons"></div>
-</div>
-</div>
 
 
 <!--End Screen -->
