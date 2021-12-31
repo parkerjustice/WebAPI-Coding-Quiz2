@@ -21,6 +21,7 @@
      <h3 class="timer text-blue-600 text-left font-mono">Time Left: <span id="timer"> </span> </h3>
         </header>
 
+        
 <!-- Begin -->
 
     <div id="initial-class" class="yes">
@@ -58,44 +59,34 @@ Answer the following question to test your coding knowlege!
                 
 <!-- Score Save-->
 
-    <form id="savehere" class="initial">
+    <form id="savehere" class="text-center font-mono text-2xl initia text-blue-600">
      <p> Type Initials to Save Progress
-        <input type="text" name="name" id="initial" class="text-input" />
+        <input type="text" name="name" id="initial" class="text-input bg-blue-200" />
         <button class="startbtn" id="sumbithere" type="submit">Save</button> </p>
                </form>
              </div>
          </div>
 
-<!--Saving Section-->
-
-    <form id="enter-initials" class="initials">
-        <p>Enter Initials
-            <input id="initials" class="text" type="text" name="initials" />
-            <button class="btn start text-2xl" id="submit" type="submit">Submit Here</button>
-        </p>
-    </form>
-    </div>
-
 <!-- Score Save-->
 
 <div id="highscoresect" class="no">
 <div class="scoresect">
-    <h1 class="scores">High Scores!</h1>
+    <h1 class="scores text-right font-mono text-blue-600">High Score</h1>
     <ol id="sect" class="final-sects"></ol>
 
 <!-- Your Buttons -->
 <div>
-    <button class="btn" id="goback">Go back</button>
-    <button class="btn" id="start-fresh">Start Fresh!</button></div>
+    <button class="btn text-blue-600 text-2xl font-mono text-left" id="goback">Go Back</button>
+    <button class="btn text-2xl text-blue-600 font-mono text-right" id="start-fresh">Start Fresh!</button></div>
 </div>
 </div>
 
 
     <!-- ADD MESSAGES WHEN PLAYER ANSWERS CORRECT OR NOT -->
-    <div class="off" id="correct">
+    <div class="no" id="correct">
         <h2>Correct! Keep going!</h2>
     </div>
-    <div class="off" id="incorrect">
+    <div class="no" id="incorrect">
         <h2>Incorrect! Don't give up!</h2>
     </div>
 
