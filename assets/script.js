@@ -18,7 +18,7 @@ var timerEl = document.querySelector("#timer");
 var points = 0;
 var remainingTime;
 var endgame;
-
+timeEl.innerText = 0;
 
 var beginquizEl = document.querySelector("#beginquiz");
 var gobackEl = document.querySelector("#goback")
