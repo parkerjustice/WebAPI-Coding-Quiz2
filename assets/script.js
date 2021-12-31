@@ -17,14 +17,14 @@ var exampleEl = document.getElementById("exmple")
 var timerEl = document.querySelector("#timer");
 var points = 0;
 var remainingTime;
-var gameover;
+var endgame;
 timeEl.innerText = 0;
 
 var beginquizEl = document.querySelector("#beginquiz");
 var goEl = document.querySelector("#goback")
 var startFresh = document.querySelector("#start-fresh")
 
-var randomQuestions
+var randomQ
 var questionIndex = 0
 
 var records = [];
@@ -60,26 +60,40 @@ var startPage = function () {
     }
 }
 
-let beginSect = function () {
-    questionsEl.classList.add("wrong")
-    questionsEl.classList.remove("right")
-    initialScreenEl.classList.remove("wrong")
-    initialScreenEl.classList.add("right")
-    scoreEl.removeChild(scoreEl.lastChild)
-    sourceEl = 0
-    endingScreenEl.textContent = 0
-    points = 0
+// SETTING UP TIMER // 
+var timeSet = function() {
+    timeleft = 60;
 
-    if (correctAnsEl.className = "right" ){
-        correctAnsEl.classList.remove("right");
-        correctAnsEl.classList.add("wrong");
-    }
+    var checkTime = setInterval(function() {
+        timeEl.innerText = timeleft;
+        timeleft--
 
-    if (incorrectAnsEl.className = "right"){
-        incorrectAnsEl.classList.remove("right");
-        incorrectAnsEl.classList.add("wrong");
-    }
+        if (endgame) {
+            clearInterval(checkTime)
+        }
+       
+        if (timeleft < 0) {
+            showScore()
+            timeEl.innerText = 0
+            clearInterval(checkTime)
+        }
+
+    }, 1000)
 }
+
+// STARTING THE GAME //
+var gameStart = function() {
+    
+    initialClassEl.classList.add('off');
+    initialClassEl.classList.remove('on');
+    initialQuestionEl.classList.remove('off');
+    initialQuestionEl.classList.add('on');
+    
+    randomQ = questions.sort(() => Math.random() - 0.5)
+    timeSet();
+    setQuestion();
+}
+
 
 startBtnEl.addEventListener("click", beginning)
 backBtnEl.addEventListener("click", beginSect)
