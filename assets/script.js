@@ -1,17 +1,34 @@
-let questionsAreaEl = document.getElementById("questions");
-let questionsEl = document.getElementById("question-area");
-let scoreEl = document.getElementById("ending");
-let initialScreenEl = document.getElementById("initial-screen");
-let sourceEl = 0
-let endingScreenEl;
-let points = 0;
-let correctAnsEl = document.getElementById("correct");
-let incorrectAnsEl = document.getElementById("incorrect");
-let backBtnEl = document.querySelector("#goback");
-let randomQuestion
-let questionEl = document.getElementById("question");
-let startBtnEl = document.getElementById("startquiz");
-let countdownEl = document.querySelector("#countdown")
+var initialClassEl = document.getElementById("initial-class");
+var initialQuestionEl = document.getElementById("initial-question");
+var yourscoresEl = document.getElementById("yourscores")
+var finalSectEl = document.getElementById("final-sect")
+var highScoreSectEl = document.getElementById("highscoresect")
+var scoresEl = document.getElementById("scores")
+var sectEl = document.getElementById("sect")
+var savehere = document.getElementById("savehere")
+//Maybe not
+var correctEl = document.getElementById("correct")
+var incorrectEl = document.getElementById("incorrect")
+//Maybe Not
+
+var questionsEl = document.getElementById("question")
+var exampleEl = document.getElementById("exmple")
+var timerEl = document.querySelector("#timer");
+var points = 0;
+var remainingTime;
+var gameover;
+timeEl.innerText = 0;
+
+var beginquizEl = document.querySelector("#beginquiz");
+var goEl = document.querySelector("#goback")
+var startFresh = document.querySelector("#start-fresh")
+
+var randomQuestions
+var questionIndex = 0
+
+var records = [];
+
+
 let questionArea = [
     {
         question: "Can we override the private method in Java?",
