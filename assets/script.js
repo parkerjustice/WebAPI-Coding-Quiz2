@@ -56,9 +56,9 @@ let questions = [
 var startPage = function () {
     highScoreSectEl.classList.add("no")
     highScoreSectEl.classList.remove("yes")
-    initialClassEl.classList.remove("no")
-    initialClassEl.classList.add("yes")
-    yourscoresEl.removeChild(boxScoreEl.lastChild)
+    yourscoresEl.classList.remove("no")
+    yourscoresEl.classList.add("yes")
+    yourscoresEl.removeChild(yourScoreEl.lastChild)
     questionIndex = 0
     endgame = ""
     timeEl.textContent = 0 
@@ -258,17 +258,13 @@ var displayRecords = function() {
         initialClassEl.classList.remove("yes");
         initialClassEl.classList.add("no");
     }     
-    if (boxQuestionEl.className = "yes") {
-        boxQuestionEl.classList.remove("yes");
-        boxQuestionEl.classList.add("no");
+    if (initialQuestionEl.className = "yes") {
+        initialQuestionEl.classList.remove("yes");
+        initialQuestionEl.classList.add("no");
     }
     if (correctEl.className = "yes") {
         correctEl.classList.remove("yes");
         correctEl.classList.add("no");
-    }
-    if (incorrectEl.className = "yes") {
-        incorrectEl.classList.remove("yes");
-        incorrectEl.classList.add("no");
     }
 }
 
