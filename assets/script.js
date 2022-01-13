@@ -35,10 +35,24 @@ let questions = [
         question: "Can we override the private method in Java?",
         answer:'1 No',
         choices:[{choice:'1 No'}, {choice:'2 Yes'}]
-    }
+    },
+    {
+        question: "Does Javascript understand inut and output",
+        answer:'1 No',
+        choices:[{choice:'1 No'}, {choice:'2 Yes'}]
+    },
+    {
+        question: "Does JavaScript use boolean Type",
+        answer:'2 Yes',
+        choices:[{choice:'1 No'}, {choice:'2 Yes'}]
+    },
+    {
+        question: "New variables in JavaScript are declared using all three of the following: let, const, yaw",
+        answer:'1 No',
+        choices:[{choice:'1 No'}, {choice:'2 Yes'}]
+    },
 ]
 
-// HOME SCREEN //
 var startPage = function () {
     highScoreSectEl.classList.add("no")
     highScoreSectEl.classList.remove("yes")
@@ -60,7 +74,6 @@ var startPage = function () {
     }
 }
 
-// SETTING UP TIMER // 
 var timeSet = function() {
     timeleft = 60;
 
@@ -81,33 +94,32 @@ var timeSet = function() {
     }, 1000)
 }
 
-// STARTING THE GAME //
 var gameStart = function() {
     
-    initialClassEl.classList.add('off');
-    initialClassEl.classList.remove('on');
-    initialQuestionEl.classList.remove('off');
-    initialQuestionEl.classList.add('on');
+    initialClassEl.classList.add('no');
+    initialClassEl.classList.remove('yes');
+    initialQuestionEl.classList.remove('no');
+    initialQuestionEl.classList.add('yes');
     
     randomQ = questions.sort(() => Math.random() - 0.5)
     timeSet();
     setQuestion();
 }
 
-// NEXT QUESTIONS //
+
 var setQuestion = function() {
     reset();
     displayQuestion(randomQuestions[questionIndex])
 }
 
-// REMOVE BUTTONS //
+
 var reset = function() {
     while (exampleEl.firstChild) {
         exampleEl.removeChild(exampleEl.firstChild)
     };
 };
 
-// DISPLAY QUESTIONS //
+
 var displayQuestion = function(index) {
     questionsEl.innerText = index.q
     for (var i = 0; i < index.choices.length; i++) {
@@ -120,7 +132,7 @@ var displayQuestion = function(index) {
     }
 };
 
-// CORRECT //
+
 var correctAnswer = function() {
     if (correctEl.className = "no") {
         correctEl.classList.remove("no")
@@ -130,7 +142,6 @@ var correctAnswer = function() {
     }
 }  
 
-// INCORRECT //
 var incorrectAnswer = function() {
     if (incorrectEl.className = "no") {
         incorrectEl.classList.remove("no")
@@ -140,7 +151,7 @@ var incorrectAnswer = function() {
     }
 }
 
-// CHECK TO SEE IF ANSWER IS CORRECT OR NOT //
+
 var checkAnswer = function(event) {
     var selected = event.target 
         if (randomQ[questionIndex].a === selected.innerText) {
@@ -160,7 +171,7 @@ var checkAnswer = function(event) {
         }
 }
 
-// SHOW POINTS AT END OF GAME //
+
 var showings = function() {
     initialQuestionEl.classList.add("no");
     finalSectEl.classList.remove("no");
@@ -171,7 +182,7 @@ var showings = function() {
     highScoreSectEl.appendChild(viewer);
 }       
 
-// HIGH SCORE FUNCTION //
+
 var savedScore = function(event) { 
     event.preventDefault() 
     var name = document.querySelector("#name").value;
@@ -206,13 +217,12 @@ var savedScore = function(event) {
   
   }
 
-  // SAVE RECORDS //
+
 var saveRecords = function () {
     localStorage.setItem("records", JSON.stringify(records))
             
 }
 
-// LOAD RECORDS ONTO SCREEN //
 var loadRecords = function () {
     var loadedRecords = localStorage.getItem("records")
         if (!loadedRecords) {
@@ -233,7 +243,7 @@ var loadRecords = function () {
     }
 }  
 
-// DISPLAY RECORDS //
+
 var displayRecords = function() {
 
     highScoreSectEl.classList.remove("no");
@@ -262,7 +272,7 @@ var displayRecords = function() {
     }
 }
 
-// CLEAR RECORDS FUNCTION //
+
 var recordClear = function() {
     records = [];
 
@@ -277,17 +287,13 @@ loadRecords()
 
 
         
-// START GAME BUTTON //
-initialClassEl.addEventListener("click", gameStart)
 
-// BACK BTN //
+beginquizEl.addEventListener("click", gameStart)
+
 gobackEl.addEventListener("click", startPage)
 
-// VIEW RECORDS //
 scoresEl.addEventListener("click", displayRecords)
 
-// NAME SUBMIT //
 savehere.addEventListener("submit", savedScore)
 
-// CLEAR BUTTON
 startFresh.addEventListener("click", recordClear)
