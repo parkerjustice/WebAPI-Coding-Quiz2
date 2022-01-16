@@ -6,90 +6,82 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Quiz</title>
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <!-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="./assets/style.css">
 </head>
 
 <!-- Main -->
 
-    <body> 
+<body>
 
-<!-- Header -->
-        
-        <header class="bg-yellow-200">
-     <h3 class="text-left font-mono text-blue-600" id="best"> Your Score </h3> 
-     <h3 class="timer text-blue-600 text-left font-mono">Time Left: <span id="timer"> </span> </h3>
-        </header>
+    <!-- Header -->
 
-        
-<!-- Begin -->
+    <header class="bg-yellow-200">
+        <h3 class="text-left font-mono text-blue-600" id="best"> Your Score </h3>
+        <h3 class="timer text-blue-600 text-left font-mono">Time Left: <span id="timer"> </span> </h3>
+    </header>
 
-    <div id="initial-class" class="yes">
-    <div class="initial-begin text-center font-mono text-2xl text-blue-600">
-      <h1>Coding Quiz</h1> 
 
-      <p>
-Answer the following question to test your coding knowlege!
-    </p>
+    <!-- Begin -->
 
-<!-- Buttons  -->
+    <div id="startQuiz" class="yes">
+        <div class="initial-begin text-center font-mono text-2xl text-blue-600">
+            <h1>Coding Quiz</h1>
 
-    <div class="text-center font-mono text-red-600 text-base">
-        <button class="startbtn" id="beginquiz">Begin the Quiz!</button>
-    </div>
-    </div>    
-    </div>
-    
-<!-- Questions -->
+            <p>Answer the following question to test your coding knowlege!</p>
 
-    <div id="initial-question" class="no">
-    <div class="question-sect">
-        <div id="question"></div>
-             <div id="example" class="buttons"></div>
-    </div>
+            <!-- Buttons  -->
+
+            <div class="text-center font-mono text-red-600 text-base">
+                <button class="startbtn" id="beginquiz">Begin the Quiz!</button>
+            </div>
+        </div>
     </div>
 
-<!-- Final-->
+    <!-- Questions -->
 
-    <div id="final-sect" class="no">
-     <div class="final">
-      <div class="text-cemter text-red-600 text-base font-mono" id=yourscores>
-        <h3>End Quiz</h3>
-    </div>  
-                
-<!-- Score Save-->
-
-    <form id="savehere" class="text-center font-mono text-2xl initia text-blue-600">
-     <p> Type Initials to Save Progress
-        <input type="text" name="name" id="initial" class="text-input bg-blue-200" />
-        <button class="startbtn" id="sumbithere" type="submit">Save</button> </p>
-               </form>
-             </div>
-         </div>
-
-<!-- Score Save-->
-
-<div id="highscoresect" class="no">
-<div class="scoresect">
-    <h1 class="scores text-right font-mono text-blue-600">High Score</h1>
-    <ol id="sect" class="final-sects"></ol>
-
-<!-- Your Buttons -->
-<div>
-    <button class="btn text-blue-600 text-2xl font-mono text-left" id="goback">Go Back</button>
-    <button class="btn text-2xl text-blue-600 font-mono text-right" id="start-fresh">Start Fresh!</button></div>
-</div>
-</div>
-
-
-    <div class="no" id="correct">
-        <h2>Correct</h2>
-    </div>
-    <div class="no" id="incorrect">
-        <h2>Incorrect</h2>
+    <div id="startQuestion" class="no">
+        <div class="question-sect">
+            <div id="question"></div>
+            <div id="example" class="buttons"></div>
+        </div>
     </div>
 
-<script src="./assets/script.js"></script>
+    <!-- Final-->
+
+    <div id="endSection" class="no">
+        <div class="final">
+            <div class="text-cemter text-red-600 text-base font-mono" id=yourscores>
+                <h3>End Quiz</h3>
+            </div>
+
+            <!-- Score Save-->
+
+            <form id="savehere" class="text-center font-mono text-2xl initia text-blue-600">
+                <p> Type Initials to Save Progress
+                    <input type="text" name="name" id="initial" class="text-input bg-blue-200" />
+                    <button class="startbtn" id="sumbithere" type="submit">Save</button>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Score Save-->
+
+    <div id="highScoreSection" class="no">
+        <div class="scoresect">
+            <h1 class="scores text-right font-mono text-blue-600">High Score</h1>
+            <ol id="sect" class="final-sects"></ol>
+
+            <!-- Your Buttons -->
+            <div>
+                <button class="btn text-blue-600 text-2xl font-mono text-left" id="goback">Go Back</button>
+                <button class="btn text-2xl text-blue-600 font-mono text-right" id="start-fresh">Start Fresh!</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/script.js"></script>
 </body>
 
 
