@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Quiz</title>
-    <!-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> -->
+   <!-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="./assets/style.css">
 </head>
 
@@ -16,8 +16,8 @@
 
     <!-- Header -->
 
-    <header class="bg-yellow-200">
-        <h3 class="text-left font-mono text-blue-600" id="best"> Your Score </h3>
+    <header class="header">
+        <h3 class="score" id="best"> Your Score </h3>
         <h3 class="timer text-blue-600 text-left font-mono">Time Left: <span id="timer"> </span> </h3>
     </header>
 
@@ -25,8 +25,8 @@
     <!-- Begin -->
 
     <div id="startQuiz" class="yes">
-        <div class="initial-begin text-center font-mono text-2xl text-blue-600">
-            <h1>Coding Quiz</h1>
+        <div class="startquiz">
+            <h1>Coding Quiz!</h1>
 
             <p>Answer the following question to test your coding knowlege!</p>
 
@@ -52,12 +52,10 @@
     <div id="endSection" class="no">
         <div class="final">
             <div class="text-cemter text-red-600 text-base font-mono" id=yourscores>
-                <h3>End Quiz</h3>
             </div>
 
             <!-- Score Save-->
-
-            <form id="savehere" class="text-center font-mono text-2xl initia text-blue-600">
+            <form id="savehere" class="saving-css">
                 <p> Type Initials to Save Progress
                     <input type="text" name="name" id="initial" class="text-input bg-blue-200" />
                     <button class="startbtn" id="sumbithere" type="submit">Save</button>
@@ -70,15 +68,21 @@
 
     <div id="highScoreSection" class="no">
         <div class="scoresect">
-            <h1 class="scores text-right font-mono text-blue-600">High Score</h1>
-            <ol id="sect" class="final-sects"></ol>
+            <h1 class="scores">High Score</h1>
+            <ol id="save" class="final-sects"></ol>
 
             <!-- Your Buttons -->
             <div>
-                <button class="btn text-blue-600 text-2xl font-mono text-left" id="goback">Go Back</button>
+                <button class="btn text-blue-600 text-2xl font-mono text-left" id="goback">Return</button>
                 <button class="btn text-2xl text-blue-600 font-mono text-right" id="start-fresh">Start Fresh!</button>
             </div>
         </div>
+    </div>
+
+
+    <div class="no" id="correct">
+    </div>
+    <div class="no" id="incorrect">
     </div>
 
     <script src="./assets/script.js"></script>

@@ -1,0 +1,55 @@
+header {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background: rgb(133, 237, 255);
+    text-align: center;
+}
+
+
+.startquiz {
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+position: absolute;
+top: 25%;
+left: 50%;
+transform: translate(-50%, -50%);
+box-shadow: 0 4px 8px 0 rgba(3, 60, 247, 0.2), 
+            0 6px 20px 0 rgba(66, 78, 255, 0.19);
+background-color: rgb(133, 237, 255);
+}
+.startbtn {
+    text-align: center;
+}
+
+.question-sect {
+text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+box-shadow: 0 4px 8px 0 rgba(3, 60, 247, 0.2), 
+            0 6px 20px 0 rgba(66, 78, 255, 0.19);
+background-color: rgb(133, 237, 255);
+
+}
+
+.saving-css {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 4px 8px 0 rgba(3, 60, 247, 0.2), 
+    0 6px 20px 0 rgba(66, 78, 255, 0.19);
+    background-color: rgb(133, 237, 255);
+}
+
+.scores {
+    text-align: left;
+    position: absolute;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    top: 75%;
+    left: 25%;
+}
