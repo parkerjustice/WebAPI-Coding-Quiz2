@@ -57,23 +57,23 @@ var gameStart = function () {
 
 let questions = [
   {
-    question: "Can we override the private method in Java?",
+    question: "Coding has over 10000 languages",
     answer: "No",
     choices: [{ choice: "No" }, { choice: "Yes" }],
   },
   {
-    question: "Does Javascript understand inut and output",
+    question: "Coding will never be as important as reading",
     answer: "No",
     choices: [{ choice: "No" }, { choice: "Yes" }],
   },
   {
-    question: "Does JavaScript use boolean Type",
+    question: "You have to work in tech to use coding",
     answer: "Yes",
     choices: [{ choice: "No" }, { choice: "Yes" }],
   },
   {
     question:
-      "New variables in JavaScript are declared using all three of the following: let, const, yaw",
+      "Computer was a job title, and the first programers were men",
     answer: "No",
     choices: [{ choice: "No" }, { choice: "Yes" }],
   },
@@ -122,9 +122,13 @@ var checkAnswer = function (event) {
 };
 
 var showings = function () {
+  
   var viewer = document.createElement("p");
+
   viewer.innerText = "Your final score is " + points + "!";
+
   highScoreSection.appendChild(viewer);
+
 };
 
 var correctAnswer = function () {
@@ -147,8 +151,6 @@ var savedScore = function (event) {
     alert("Initials Here");
     return;
   }
-
-  nameForm.reset();
 
   var record = {
     name: name,
@@ -232,10 +234,10 @@ beginQuiz.addEventListener("click", gameStart);
 
 goBack.addEventListener("click", startPage);
 
-// scoresEl.addEventListener("click", displayRecords);
+scores.addEventListener("click", displayRecords);
 
 saveScores.addEventListener("submit", savedScore);
 
-startFresh.addEventListener("click", recordClear);
+//startFresh.addEventListener("click", recordClear);
 
 startPage();

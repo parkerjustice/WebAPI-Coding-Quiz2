@@ -19,7 +19,11 @@ box-shadow: 0 4px 8px 0 rgba(3, 60, 247, 0.2),
 background-color: rgb(133, 237, 255);
 }
 .startbtn {
-    text-align: center;
+    transition-duration: 0.4s;
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 15px 32px;
+    font-size: 16px;
 }
 
 .question-sect {
@@ -52,4 +56,15 @@ background-color: rgb(133, 237, 255);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     top: 75%;
     left: 10%;
+}
+
+.btn {
+    top: 80%;
+    position: absolute;
+    left: 90%;
+    transition-duration: 0.4s;
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 15px 32px;
+    font-size: 16px;
 }
