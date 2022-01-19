@@ -125,7 +125,7 @@ var showings = function () {
   
   var viewer = document.createElement("p");
 
-  viewer.innerText = "Your final score is " + points + "!";
+  viewer.innerText = "Your score is" + points ;
 
   highScoreSection.appendChild(viewer);
 
@@ -146,33 +146,6 @@ var incorrectAnswer = function () {
 
 var savedScore = function (event) {
 
-  var name = document.querySelector("#text").value;
-  if (!name) {
-    alert("Initials Here");
-    return;
-  }
-
-  var record = {
-    name: name,
-    points: points,
-  };
-
-  records.push(record);
-  records.sort((a, b) => {
-    return b.points - a.points;
-  });
-
-  while (highScoreSection.firstChild) {
-    highScoreSection.removeChild(highScoreSection.firstChild);
-  }
-
-  for (var i = 0; i < records.length; i++) {
-    var savedFile = document.createElement("li");
-    savedFile.className = "high-score";
-    savedFile.innerHTML = records[i].name + " - " + records[i].points;
-    lsHighScoreEl.appendChild(savedFile);
-  }
-
   saveRecords();
   displayRecords();
 };
@@ -181,27 +154,8 @@ var saveRecords = function () {
   localStorage.setItem("records", JSON.stringify(records));
 };
 
-var loadRecords = function () {
-  var loadedRecords = localStorage.getItem("records");
-  if (!loadedRecords) {
-    return false;
-  }
-
-  records = JSON.parse(loadedRecords);
-  records.sort((a, b) => {
-    return b.points - a.points;
-  });
-
-  for (var i = 0; i < loadedRecords.length; i++) {
-    var savedFile = document.createElement("li");
-    savedFile.className = "high-score";
-    savedFile.innerText =
-      loadedRecords[i].name + " - " + loadedRecords[i].points;
-      save.appendChild(savedFile);
-
-    records.push(loadedRecords[i]);
-  }
-};
+var upploadRecords = function () {
+}
 
 var displayRecords = function () {
   endgame = "true";
@@ -228,13 +182,11 @@ var recordClear = function () {
   localStorage.clear(records);
 };
 
-loadRecords();
+
 
 beginQuiz.addEventListener("click", gameStart);
 
 goBack.addEventListener("click", startPage);
-
-scores.addEventListener("click", displayRecords);
 
 saveScores.addEventListener("submit", savedScore);
 
